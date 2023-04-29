@@ -1,0 +1,30 @@
+:root {
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+}
+body {
+  max-width: none;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.todoapp {
+  max-width: 550px;
+  margin-inline: 10px;
+}
+
+@media screen and (min-width: 431px) {
+  .todoapp {
+    margin-inline: auto;
+  }
+  .filters {
+    position: relative;
+  }
+
+  .clear-completed {
+    margin-block: 1rem;
+  }
+}

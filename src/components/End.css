@@ -1,0 +1,33 @@
+.end {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+
+  gap: 2em;
+
+  background-color: #b83f45;
+  padding: 0.5rem 2rem;
+  color: var(--light-blue-200);
+}
+.end p {
+  grid-column: 1/3;
+
+  justify-self: center;
+}
+.end p a {
+  font-size: 16px;
+}
+.end ul {
+  list-style: none;
+  grid-column: 3/4;
+
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.end a {
+  color: var(--light-blue-200);
+  text-decoration: none;
+  font-size: 1.5em;
+}
