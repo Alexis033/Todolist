@@ -32,9 +32,15 @@ export const useTodos = (): {
   handleAddTodo: ({ title }: TodoTitle) => void
   handleUpdateTitle: ({ id, title }: { id: string; title: string }) => void
 } => {
-  const [todos, setTodos] = React.useState<ListOfTodos>(
-    JSON.parse(localStorage.getItem('listTodos')) || mockTodos
-  )
+  const [todos, setTodos] = React.useState<ListOfTodos>(() => {
+    const storedTodos = localStorage.getItem('listTodos')
+    try {
+      return storedTodos ? JSON.parse(storedTodos) : mockTodos
+    } catch (error) {
+      console.error('Error loading todos from local storage', error)
+      return mockTodos
+    }
+  })
   const [filtersSelected, setFiltersSelected] = React.useState<FilterValue>(
     () => {
       const params = new URLSearchParams(window.location.search)
